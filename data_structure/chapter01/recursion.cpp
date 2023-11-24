@@ -49,15 +49,14 @@ int tailRecur(int n, int res) {
  * 斐波那契数列：递归
  * @return
  */
- int fib(int n)
-{
-     //终止条件f(1)=0 ,f(2)=1
-     if(n==1 || n==2)
-         return n-1;
-     //递归调用f(n) = f(n-1)- f(n-2)
-     int res = fib(n-1)+ fib(n-2);
-     //返回结果 f(n)
-    return  res;
+int fib(int n) {
+    // 终止条件 f(1) = 0, f(2) = 1
+    if (n == 1 || n == 2)
+        return n - 1;
+    // 递归调用 f(n) = f(n-1) + f(n-2)
+    int res = fib(n - 1) + fib(n - 2);
+    // 返回结果 f(n)
+    return res;
 }
 
 
@@ -71,6 +70,11 @@ int main() {
     res = forLoopRecur(n);
     cout << "\n使用迭代模拟递归求和结果 res = " << res << endl;
 
-    res = tailRecur(n,0);
-    cout <<"\n尾递归函数的求和结果 res =" << res << endl;
+    res = tailRecur(n, 0);
+    cout << "\n尾递归函数的求和结果 res =" << res << endl;
+
+    res = fib(n);
+    cout << "\n斐波那契数列的求和结果 res =" << res << endl;
+
+    return 0;
 }
